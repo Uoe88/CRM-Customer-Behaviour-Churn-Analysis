@@ -387,19 +387,6 @@ CRM-Customer-Behaviour-Churn-Analysis/
 
 
 
----
-
-
-
-## 🌐 Live Dashboard
-
-
-
-Interactive dashboard available on **NovyPro**:
-
-
-
-> *(Add your NovyPro link here after publishing.)*
 
 
 
