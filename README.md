@@ -1,425 +1,212 @@
 # CRM-Customer-Behaviour-Churn-Analysis
-Analyze customer behavior and identify key factors affecting customer churn.
-## 📌 Project Overview
 
+Phân tích hành vi khách hàng và xác định các yếu tố ảnh hưởng đến tỷ lệ rời bỏ của khách hàng.
 
+## 📌 Tổng quan dự án
 
-This project analyzes customer behavior and churn patterns using Power BI. The objective is to identify factors influencing customer churn, evaluate customer engagement, and provide actionable business recommendations to improve customer retention and maximize customer lifetime value (CLV).
-
-
+Dự án sử dụng **Power BI** để phân tích hành vi khách hàng và tỷ lệ rời bỏ (Customer Churn). Mục tiêu là xác định các yếu tố ảnh hưởng đến quyết định rời bỏ của khách hàng, đánh giá mức độ tương tác của người dùng và đưa ra các đề xuất giúp doanh nghiệp cải thiện khả năng giữ chân khách hàng cũng như tối đa hóa giá trị vòng đời khách hàng (Customer Lifetime Value - CLV).
 
 ---
 
+## 🎯 Bài toán kinh doanh
 
+Tỷ lệ khách hàng rời bỏ ảnh hưởng trực tiếp đến sự tăng trưởng và lợi nhuận lâu dài của doanh nghiệp. Dự án tập trung trả lời các câu hỏi sau:
 
-## 🎯 Business Problem
-
-
-
-Customer churn significantly affects long-term business growth and profitability. This project aims to answer the following business questions:
-
-
-
-- What is the overall customer churn rate?
-
-- Which customer segments are most likely to churn?
-
-- How do customer engagement and satisfaction influence churn?
-
-- Which subscription plans generate the highest revenue?
-
-- How can the company improve customer retention and drive revenue?
-
-
+- Tỷ lệ khách hàng rời bỏ hiện tại là bao nhiêu?
+- Nhóm khách hàng nào có nguy cơ rời bỏ cao nhất?
+- Mức độ tương tác và sự hài lòng ảnh hưởng như thế nào đến tỷ lệ rời bỏ?
+- Gói đăng ký nào mang lại doanh thu cao nhất?
+- Doanh nghiệp có thể làm gì để cải thiện khả năng giữ chân khách hàng và gia tăng doanh thu?
 
 ---
 
+## 📂 Bộ dữ liệu
 
+**Nguồn dữ liệu:** Kaggle – Netflix Large User Dataset
 
-## 📂 Dataset
+Bộ dữ liệu bao gồm thông tin nhân khẩu học của khách hàng, thông tin gói đăng ký, mức độ tương tác và trạng thái rời bỏ của khách hàng.
 
+### Các trường dữ liệu chính
 
-
-**Source:** Kaggle – Netflix large user Dataset
-
-
-
-The dataset contains customer demographic information, subscription details, engagement metrics, and churn status.
-
-
-
-### Key Features
-
-
-
-- Customer ID
-
-- Age
-
-- Region
-
-- Subscription Plan
-
-- Monthly Charge
-
-- Daily Watch Time
-
-- Engagement Score
-
-- Satisfaction Score
-
-- Support Queries
-
-- Payment History
-
-- Churn Status
-
-
+- Mã khách hàng (Customer ID)
+- Tuổi (Age)
+- Khu vực (Region)
+- Gói đăng ký (Subscription Plan)
+- Phí đăng ký hàng tháng (Monthly Charge)
+- Thời gian xem trung bình mỗi ngày (Daily Watch Time)
+- Điểm tương tác (Engagement Score)
+- Điểm hài lòng (Satisfaction Score)
+- Số lần liên hệ hỗ trợ (Support Queries)
+- Lịch sử thanh toán (Payment History)
+- Trạng thái rời bỏ (Churn Status)
 
 ---
 
+## 🧹 Chuẩn bị dữ liệu
 
+Quá trình chuẩn bị dữ liệu được thực hiện bằng **Microsoft Excel**.
 
-## 🧹 Data Preparation
+### Làm sạch dữ liệu
 
+- Loại bỏ dữ liệu trùng lặp
+- Xử lý giá trị thiếu
+- Chuẩn hóa dữ liệu phân loại
+- Chuẩn hóa kiểu dữ liệu
+- Kiểm tra tính nhất quán của dữ liệu
 
+### Xây dựng dữ liệu bổ sung (Feature Engineering)
 
-Data preparation was performed using **Microsoft Excel**.
+Tạo thêm các chỉ số phục vụ cho quá trình phân tích:
 
-
-
-### Data Cleaning
-
-
-
-- Removed duplicate records
-
-- Handled missing values
-
-- Standardized categorical values
-
-- Corrected data types
-
-- Checked data consistency
-
-
-
-### Feature Engineering
-
-
-
-Additional business metrics were created to support analysis:
-
-
-
-- Customer Lifetime Value (CLV)
-
-- Total Revenue
-
-- Quarterly Revenue
-
-- Customer Tenure
-
-
+- Giá trị vòng đời khách hàng (Customer Lifetime Value - CLV)
+- Tổng doanh thu (Total Revenue)
+- Doanh thu theo quý (Quarterly Revenue)
+- Thời gian gắn bó của khách hàng (Customer Tenure)
 
 ---
-
-
 
 ## 📊 Dashboard
 
+Dashboard được xây dựng bằng **Power BI** và gồm **4 trang phân tích**.
 
+### 📄 Trang 1 – Tổng quan (Executive Overview)
 
-The dashboard was developed in **Power BI** and consists of four analytical pages.
+Cung cấp cái nhìn tổng quan về tình hình kinh doanh thông qua các chỉ số quan trọng.
 
+**Các KPI chính**
 
-
-### 📄 Page 1 – Executive Overview
-
-
-
-Provides a high-level summary of business performance.
-
-
-
-**Key KPIs**
-
-
-
-- Total Customers
-
-- Active Customers
-
-- Churn Rate
-
-- Revenue
-
-- Customer Lifetime Value (CLV)
-
-
+- Tổng số khách hàng
+- Số khách hàng đang hoạt động
+- Tỷ lệ khách hàng rời bỏ
+- Doanh thu
+- Giá trị vòng đời khách hàng (CLV)
 
 ---
 
+### 📄 Trang 2 – Phân tích hành vi khách hàng
 
+Phân tích mức độ tương tác và hành vi sử dụng dịch vụ của khách hàng.
 
-### 📄 Page 2 – Customer Behaviour
+Bao gồm:
 
-
-
-Analyzes customer engagement and usage patterns.
-
-
-
-Main analyses include:
-
-
-
-- Daily Watch Time
-
-- Engagement Rate
-
-- Satisfaction Score
-
-- Device Usage
-
-- Genre Preference
-
-
+- Thời gian xem trung bình mỗi ngày
+- Mức độ tương tác
+- Mức độ hài lòng
+- Thiết bị sử dụng
+- Thể loại nội dung yêu thích
 
 ---
 
+### 📄 Trang 3 – Phân tích tỷ lệ rời bỏ
 
+Phân tích xu hướng và các yếu tố ảnh hưởng đến tỷ lệ rời bỏ của khách hàng.
 
-### 📄 Page 3 – Churn Analysis
+Các biểu đồ chính:
 
-
-
-Focuses on customer churn trends and risk factors.
-
-
-
-Visualizations include:
-
-
-
-- Churn by Subscription Plan
-
-- Churn by Region
-
-- Churn by Age Group
-
-- Monthly Churn Trend
-
-- Churn vs Satisfaction
-
-
+- Tỷ lệ rời bỏ theo gói đăng ký
+- Tỷ lệ rời bỏ theo khu vực
+- Tỷ lệ rời bỏ theo nhóm tuổi
+- Xu hướng rời bỏ theo thời gian
+- Mối quan hệ giữa mức độ hài lòng và tỷ lệ rời bỏ
 
 ---
 
+### 📄 Trang 4 – Phân tích giá trị khách hàng
 
+Đánh giá mức độ đóng góp doanh thu và giá trị của từng nhóm khách hàng.
 
-### 📄 Page 4 – Customer Value
+Bao gồm:
 
-
-
-Evaluates customer profitability and revenue contribution.
-
-
-
-Main analyses include:
-
-
-
-- Revenue by Subscription Plan
-
-- Customer Lifetime Value
-
-- Revenue Trend
-
-- High-value Customer Segments
-
-
+- Doanh thu theo gói đăng ký
+- Giá trị vòng đời khách hàng (CLV)
+- Doanh thu theo các châu lục
+- Nhóm khách hàng có giá trị cao
 
 ---
 
+## 💡 Kết quả phân tích
 
-
-## 💡 Key Insights
-
-
-
-- Premium customers generated the highest revenue and customer lifetime value.
-
-- Customers with lower engagement rates were more likely to churn.
-
-- Lower satisfaction scores were associated with higher churn rates.
-
-- Monthly subscription plans experienced higher churn compared to longer-term plans.
-
-- Customers who frequently contacted customer support showed a higher risk of churn.
-
-
+- Khách hàng sử dụng gói Premium tạo ra doanh thu và giá trị vòng đời khách hàng cao nhất. 
+- Khách hàng có mức độ tương tác thấp có điểm hài lòng thấp và có xu hướng rời bỏ nhiều hơn.
+- Khách hàng có điểm hài lòng thấp thường có tỷ lệ rời bỏ cao.
+- Gói đăng ký theo tháng có tỷ lệ rời bỏ cao hơn các gói đăng ký dài hạn.
+- Khách hàng thường xuyên liên hệ bộ phận hỗ trợ có nguy cơ rời bỏ cao hơn.
 
 ---
 
+## 📌 Đề xuất
 
+Dựa trên kết quả phân tích, đề xuất một số giải pháp nhằm cải thiện khả năng giữ chân khách hàng:
 
-## 📌 Business Recommendations
-
-
-
-Based on the analysis, the following recommendations are proposed:
-
-
-
-- Improve retention strategies for Premium customers through personalized loyalty programs.
-
-- Increase customer engagement with targeted campaigns and personalized content.
-
-- Enhance customer support quality to improve customer satisfaction.
-
-- Encourage customers to switch from monthly to annual subscription plans.
-
-- Monitor low-engagement customers proactively to reduce churn risk.
-
-
+- Xây dựng chương trình khách hàng thân thiết dành cho nhóm khách hàng Premium.
+- Tăng mức độ tương tác thông qua các chiến dịch cá nhân hóa nội dung.
+- Nâng cao chất lượng dịch vụ hỗ trợ khách hàng nhằm cải thiện mức độ hài lòng.
+- Khuyến khích khách hàng chuyển từ gói đăng ký theo tháng sang các gói dài hạn.
+- Chủ động theo dõi và chăm sóc nhóm khách hàng có mức độ tương tác thấp để giảm nguy cơ rời bỏ.
 
 ---
 
+## 🛠 Công cụ sử dụng
 
-
-## 🛠 Tools Used
-
-
-
-- Microsoft Excel (Data Cleaning & Preparation)
-
-- Power BI (Data Modeling & Dashboard Development)
-
-
+- Microsoft Excel (Làm sạch và chuẩn bị dữ liệu)
+- Power BI (Mô hình hóa dữ liệu và xây dựng Dashboard)
 
 ---
 
+## 📁 Cấu trúc dự án
 
-
-## 📁 Project Structure
-
-
-
-```
-
+```text
 CRM-Customer-Behaviour-Churn-Analysis/
-
 │
-
 ├── data/
-
 │   ├── raw/
-
 │   └── processed/
-
 │
-
 ├── dashboard/
-
 │   ├── CRM_Customer_Behaviour.pbix
-
 │   ├── overview.png
-
 │   ├── customer_behaviour.png
-
 │   ├── churn_analysis.png
-
 │   └── customer_value.png
-
 │
-
 ├── docs/
-
 │
-
 ├── README.md
-
 └── LICENSE
-
 ```
 
-
-
 ---
-
-
 
 ## 📷 Dashboard Preview
 
-
-
-### Executive Overview
-
-
+### Tổng quan
 
 ![Executive Overview](dashboard/image/Overview.png)
 
+### Phân tích hành vi khách hàng
 
+![Customer Behaviour](dashboard/image/Customer_voice_Satisfaction.png)
 
-### Customer Behaviour
+### Phân tích tỷ lệ rời bỏ
 
+![Churn Analysis](dashboard/image/Churn_analysis.png)
 
+### Phân tích giá trị khách hàng
 
-![Executive Overview](dashboard/image/Customer_voice_Satisfaction.png)
-
-
-
-### Churn Analysis
-
-
-
-![Executive Overview](dashboard/image/Churn_analysis.png)
-
-
-
-
-### Customer Value
-
-
-
-![Executive Overview](dashboard/image/Customer_lifetime_value.png)
-
-
-
-
-
+![Customer Value](dashboard/image/Customer_lifetime_value.png)
 
 ---
 
+## 📈 Kỹ năng áp dụng
 
-
-## 📈 Skills Demonstrated
-
-
-
-- Business Analysis
-
-- Data Cleaning
-
-- Data Preparation
-
+- Phân tích nghiệp vụ (Business Analysis)
+- Làm sạch dữ liệu (Data Cleaning)
+- Chuẩn bị dữ liệu (Data Preparation)
 - Feature Engineering
-
-- KPI Design
-
-- Data Visualization
-
-- Customer Analytics
-
-- Churn Analysis
-
-- Customer Lifetime Value (CLV)
-
-- Business Insight Generation
-
-- Power BI Dashboard Development
-
-
-
----
+- Thiết kế KPI
+- Trực quan hóa dữ liệu (Data Visualization)
+- Phân tích hành vi khách hàng (Customer Analytics)
+- Phân tích tỷ lệ rời bỏ (Churn Analysis)
+- Phân tích giá trị vòng đời khách hàng (Customer Lifetime Value - CLV)
+- Phân tích dữ liệu và xây dựng Insight
+- Xây dựng Dashboard bằng Power BI
